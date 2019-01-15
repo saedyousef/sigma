@@ -23,6 +23,21 @@ $this->version = 'v2';
    'class' => 'common\components\GoogleApiComponent',
  ],
 ```
+
+## Enable pretty URL
+in the ``common/config/main-local.php`` inside the ``components`` array add these lines
+```
+'urlManager' => [
+   'class' => 'yii\web\UrlManager',
+   'showScriptName' => false,
+   'enablePrettyUrl' => true,
+   'rules' => array(
+      '<controller:\w+>/<id:\d+>' => '<controller>/view',
+      '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+      '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+   ),
+],
+```
 Then you need to change the default nginx block to 
 ```
 server {
