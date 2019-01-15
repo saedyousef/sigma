@@ -15,6 +15,14 @@ to
 $this->servicePath = 'drive/v2/';
 $this->version = 'v2';
 ```
+
+## Adding the GoogleApiComponent
+ in the ``common/config/main-local.php`` inside the ``components`` array add these lines
+```
+'GoogleApiComponent' => [      
+   'class' => 'common\components\GoogleApiComponent',
+ ],
+```
 Then you need to change the default nginx block to 
 ```
 server {
